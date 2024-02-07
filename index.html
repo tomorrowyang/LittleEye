@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Little Eye</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="eyeSocket eyeSocketSleeping" id='bigEye'>
+        <div id="eyeball"></div>
+    </div>
+    <div class="filter">
+        <div class="eyeSocket" id='eyeFilter'>
+        </div>
+    </div>
+    <svg width="0">
+        <filter id='filter'>
+            <feTurbulence baseFrequency="1">
+                <animate id="animate1" attributeName="baseFrequency" dur="1s" from="0.5" to="0.55" begin="0s;animate1.end">
+                </animate>
+                <animate id="animate2" attributeName="baseFrequency" dur="1s" from="0.55" to="0.5" begin="animate2.end">
+                </animate>
+            </feTurbulence>
+            <feDisplacementMap in="SourceGraphic" scale="50" xChannelSelector="R" yChannelSelector="B" />
+        </filter>
+    </svg>
+
+    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
